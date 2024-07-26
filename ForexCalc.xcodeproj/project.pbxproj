@@ -1,0 +1,664 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A969C70F2C53FC63007A3FD7 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = A969C70E2C53FC63007A3FD7 /* Swinject */; };
+		A9CA92412C53EDC80023F305 /* ForexCalcApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA92402C53EDC80023F305 /* ForexCalcApp.swift */; };
+		A9CA92452C53EDC90023F305 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9CA92442C53EDC90023F305 /* Assets.xcassets */; };
+		A9CA92482C53EDC90023F305 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9CA92472C53EDC90023F305 /* Preview Assets.xcassets */; };
+		A9CA92522C53EDCA0023F305 /* ForexCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA92512C53EDCA0023F305 /* ForexCalcTests.swift */; };
+		A9CA925C2C53EDCA0023F305 /* ForexCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA925B2C53EDCA0023F305 /* ForexCalcUITests.swift */; };
+		A9CA925E2C53EDCA0023F305 /* ForexCalcUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA925D2C53EDCA0023F305 /* ForexCalcUITestsLaunchTests.swift */; };
+		A9CA926B2C53EF0D0023F305 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA926A2C53EF0D0023F305 /* MainView.swift */; };
+		A9CA92702C53EF800023F305 /* ButtonsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA926F2C53EF800023F305 /* ButtonsEnum.swift */; };
+		A9CA92722C53F16A0023F305 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA92712C53F16A0023F305 /* MainViewModel.swift */; };
+		A9CA927A2C53FADB0023F305 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA92792C53FADB0023F305 /* DIContainer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A9CA924E2C53EDCA0023F305 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9CA92352C53EDC80023F305 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9CA923C2C53EDC80023F305;
+			remoteInfo = ForexCalc;
+		};
+		A9CA92582C53EDCA0023F305 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9CA92352C53EDC80023F305 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9CA923C2C53EDC80023F305;
+			remoteInfo = ForexCalc;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A9CA923D2C53EDC80023F305 /* ForexCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForexCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9CA92402C53EDC80023F305 /* ForexCalcApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForexCalcApp.swift; sourceTree = "<group>"; };
+		A9CA92442C53EDC90023F305 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A9CA92472C53EDC90023F305 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A9CA924D2C53EDCA0023F305 /* ForexCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForexCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9CA92512C53EDCA0023F305 /* ForexCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForexCalcTests.swift; sourceTree = "<group>"; };
+		A9CA92572C53EDCA0023F305 /* ForexCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForexCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9CA925B2C53EDCA0023F305 /* ForexCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForexCalcUITests.swift; sourceTree = "<group>"; };
+		A9CA925D2C53EDCA0023F305 /* ForexCalcUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForexCalcUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A9CA926A2C53EF0D0023F305 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		A9CA926F2C53EF800023F305 /* ButtonsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsEnum.swift; sourceTree = "<group>"; };
+		A9CA92712C53F16A0023F305 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		A9CA92792C53FADB0023F305 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A9CA923A2C53EDC80023F305 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A969C70F2C53FC63007A3FD7 /* Swinject in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9CA924A2C53EDCA0023F305 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9CA92542C53EDCA0023F305 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A9CA92342C53EDC80023F305 = {
+			isa = PBXGroup;
+			children = (
+				A9CA923F2C53EDC80023F305 /* ForexCalc */,
+				A9CA92502C53EDCA0023F305 /* ForexCalcTests */,
+				A9CA925A2C53EDCA0023F305 /* ForexCalcUITests */,
+				A9CA923E2C53EDC80023F305 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A9CA923E2C53EDC80023F305 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A9CA923D2C53EDC80023F305 /* ForexCalc.app */,
+				A9CA924D2C53EDCA0023F305 /* ForexCalcTests.xctest */,
+				A9CA92572C53EDCA0023F305 /* ForexCalcUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A9CA923F2C53EDC80023F305 /* ForexCalc */ = {
+			isa = PBXGroup;
+			children = (
+				A9CA92782C53FAC80023F305 /* DI */,
+				A9CA926E2C53EF520023F305 /* Network */,
+				A9CA926D2C53EF480023F305 /* ViewModels */,
+				A9CA926C2C53EF3B0023F305 /* Views */,
+				A9CA92402C53EDC80023F305 /* ForexCalcApp.swift */,
+				A9CA92442C53EDC90023F305 /* Assets.xcassets */,
+				A9CA92462C53EDC90023F305 /* Preview Content */,
+			);
+			path = ForexCalc;
+			sourceTree = "<group>";
+		};
+		A9CA92462C53EDC90023F305 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A9CA92472C53EDC90023F305 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A9CA92502C53EDCA0023F305 /* ForexCalcTests */ = {
+			isa = PBXGroup;
+			children = (
+				A9CA92512C53EDCA0023F305 /* ForexCalcTests.swift */,
+			);
+			path = ForexCalcTests;
+			sourceTree = "<group>";
+		};
+		A9CA925A2C53EDCA0023F305 /* ForexCalcUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A9CA925B2C53EDCA0023F305 /* ForexCalcUITests.swift */,
+				A9CA925D2C53EDCA0023F305 /* ForexCalcUITestsLaunchTests.swift */,
+			);
+			path = ForexCalcUITests;
+			sourceTree = "<group>";
+		};
+		A9CA926C2C53EF3B0023F305 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A9CA926A2C53EF0D0023F305 /* MainView.swift */,
+				A9CA926F2C53EF800023F305 /* ButtonsEnum.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A9CA926D2C53EF480023F305 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A9CA92712C53F16A0023F305 /* MainViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A9CA926E2C53EF520023F305 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A9CA92782C53FAC80023F305 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				A9CA92792C53FADB0023F305 /* DIContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A9CA923C2C53EDC80023F305 /* ForexCalc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9CA92612C53EDCA0023F305 /* Build configuration list for PBXNativeTarget "ForexCalc" */;
+			buildPhases = (
+				A9CA92392C53EDC80023F305 /* Sources */,
+				A9CA923A2C53EDC80023F305 /* Frameworks */,
+				A9CA923B2C53EDC80023F305 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ForexCalc;
+			packageProductDependencies = (
+				A969C70E2C53FC63007A3FD7 /* Swinject */,
+			);
+			productName = ForexCalc;
+			productReference = A9CA923D2C53EDC80023F305 /* ForexCalc.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A9CA924C2C53EDCA0023F305 /* ForexCalcTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9CA92642C53EDCA0023F305 /* Build configuration list for PBXNativeTarget "ForexCalcTests" */;
+			buildPhases = (
+				A9CA92492C53EDCA0023F305 /* Sources */,
+				A9CA924A2C53EDCA0023F305 /* Frameworks */,
+				A9CA924B2C53EDCA0023F305 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9CA924F2C53EDCA0023F305 /* PBXTargetDependency */,
+			);
+			name = ForexCalcTests;
+			productName = ForexCalcTests;
+			productReference = A9CA924D2C53EDCA0023F305 /* ForexCalcTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A9CA92562C53EDCA0023F305 /* ForexCalcUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9CA92672C53EDCA0023F305 /* Build configuration list for PBXNativeTarget "ForexCalcUITests" */;
+			buildPhases = (
+				A9CA92532C53EDCA0023F305 /* Sources */,
+				A9CA92542C53EDCA0023F305 /* Frameworks */,
+				A9CA92552C53EDCA0023F305 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9CA92592C53EDCA0023F305 /* PBXTargetDependency */,
+			);
+			name = ForexCalcUITests;
+			productName = ForexCalcUITests;
+			productReference = A9CA92572C53EDCA0023F305 /* ForexCalcUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A9CA92352C53EDC80023F305 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					A9CA923C2C53EDC80023F305 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					A9CA924C2C53EDCA0023F305 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = A9CA923C2C53EDC80023F305;
+					};
+					A9CA92562C53EDCA0023F305 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = A9CA923C2C53EDC80023F305;
+					};
+				};
+			};
+			buildConfigurationList = A9CA92382C53EDC80023F305 /* Build configuration list for PBXProject "ForexCalc" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A9CA92342C53EDC80023F305;
+			packageReferences = (
+				A969C70D2C53FC63007A3FD7 /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
+			productRefGroup = A9CA923E2C53EDC80023F305 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A9CA923C2C53EDC80023F305 /* ForexCalc */,
+				A9CA924C2C53EDCA0023F305 /* ForexCalcTests */,
+				A9CA92562C53EDCA0023F305 /* ForexCalcUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A9CA923B2C53EDC80023F305 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9CA92482C53EDC90023F305 /* Preview Assets.xcassets in Resources */,
+				A9CA92452C53EDC90023F305 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9CA924B2C53EDCA0023F305 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9CA92552C53EDCA0023F305 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A9CA92392C53EDC80023F305 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9CA92722C53F16A0023F305 /* MainViewModel.swift in Sources */,
+				A9CA92702C53EF800023F305 /* ButtonsEnum.swift in Sources */,
+				A9CA926B2C53EF0D0023F305 /* MainView.swift in Sources */,
+				A9CA927A2C53FADB0023F305 /* DIContainer.swift in Sources */,
+				A9CA92412C53EDC80023F305 /* ForexCalcApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9CA92492C53EDCA0023F305 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9CA92522C53EDCA0023F305 /* ForexCalcTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9CA92532C53EDCA0023F305 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9CA925E2C53EDCA0023F305 /* ForexCalcUITestsLaunchTests.swift in Sources */,
+				A9CA925C2C53EDCA0023F305 /* ForexCalcUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A9CA924F2C53EDCA0023F305 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9CA923C2C53EDC80023F305 /* ForexCalc */;
+			targetProxy = A9CA924E2C53EDCA0023F305 /* PBXContainerItemProxy */;
+		};
+		A9CA92592C53EDCA0023F305 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9CA923C2C53EDC80023F305 /* ForexCalc */;
+			targetProxy = A9CA92582C53EDCA0023F305 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A9CA925F2C53EDCA0023F305 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A9CA92602C53EDCA0023F305 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A9CA92622C53EDCA0023F305 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ForexCalc/Preview Content\"";
+				DEVELOPMENT_TEAM = YE7XHRYWQ5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bill-polizos.ForexCalc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A9CA92632C53EDCA0023F305 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ForexCalc/Preview Content\"";
+				DEVELOPMENT_TEAM = YE7XHRYWQ5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bill-polizos.ForexCalc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A9CA92652C53EDCA0023F305 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YE7XHRYWQ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bill-polizos.ForexCalcTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ForexCalc.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ForexCalc";
+			};
+			name = Debug;
+		};
+		A9CA92662C53EDCA0023F305 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YE7XHRYWQ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bill-polizos.ForexCalcTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ForexCalc.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ForexCalc";
+			};
+			name = Release;
+		};
+		A9CA92682C53EDCA0023F305 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YE7XHRYWQ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bill-polizos.ForexCalcUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ForexCalc;
+			};
+			name = Debug;
+		};
+		A9CA92692C53EDCA0023F305 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YE7XHRYWQ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "bill-polizos.ForexCalcUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ForexCalc;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A9CA92382C53EDC80023F305 /* Build configuration list for PBXProject "ForexCalc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9CA925F2C53EDCA0023F305 /* Debug */,
+				A9CA92602C53EDCA0023F305 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9CA92612C53EDCA0023F305 /* Build configuration list for PBXNativeTarget "ForexCalc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9CA92622C53EDCA0023F305 /* Debug */,
+				A9CA92632C53EDCA0023F305 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9CA92642C53EDCA0023F305 /* Build configuration list for PBXNativeTarget "ForexCalcTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9CA92652C53EDCA0023F305 /* Debug */,
+				A9CA92662C53EDCA0023F305 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9CA92672C53EDCA0023F305 /* Build configuration list for PBXNativeTarget "ForexCalcUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9CA92682C53EDCA0023F305 /* Debug */,
+				A9CA92692C53EDCA0023F305 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A969C70D2C53FC63007A3FD7 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A969C70E2C53FC63007A3FD7 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A969C70D2C53FC63007A3FD7 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A9CA92352C53EDC80023F305 /* Project object */;
+}
