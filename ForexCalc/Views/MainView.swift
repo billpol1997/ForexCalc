@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     @ObservedObject var viewModel: MainViewModel
     
+    
     init(viewModel: MainViewModel) {
         self.viewModel = DIContainer.shared.getContainerSwinject().resolve(MainViewModel.self)!
     }
@@ -34,7 +35,7 @@ struct MainView: View {
     var calculationView: some View {
         HStack {
             Spacer()
-            Text("0")
+            Text(self.viewModel.result)
                 .foregroundColor(.white)
                 .font(.system(size: 70))
                 .fontWeight(.semibold)
@@ -48,13 +49,13 @@ struct MainView: View {
                 HStack(spacing: 8) {
                     ForEach(Array(row.enumerated()) , id: \.offset) { itemIndex, item in
                         Button {
-                            //TODO: add action 
+                            self.viewModel.getButtonData(button: item)
                         } label: {
                             Text(item.description)
                                 .frame(width: self.viewModel.getButtonWidth(button: item), height: (UIScreen.main.bounds.width - (5 * 12)) / 4)
                                 .font(.system(size: 32))
-                                .foregroundColor(self.viewModel.getButtonTextColor(button: item))
-                                .background(self.viewModel.getButtonBGColor(button: item))
+                                .foregroundColor(self.viewModel.toggledFunction.isOn && item.description == self.viewModel.toggledFunction.type.rawValue ? .orange : self.viewModel.getButtonTextColor(button: item))
+                                .background(self.viewModel.toggledFunction.isOn && item.description == self.viewModel.toggledFunction.type.rawValue ? .white : self.viewModel.getButtonBGColor(button: item))
                                 .cornerRadius((UIScreen.main.bounds.width - (5 * 12)) / 4)
                         }
                     }

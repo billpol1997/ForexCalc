@@ -26,7 +26,7 @@ enum ButtonsEnum: CustomStringConvertible {
         case .divide:
             return "/"
         case .multiply:
-            return "*"
+            return "x"
         case .equal:
             return "="
         case .clear:
@@ -37,4 +37,12 @@ enum ButtonsEnum: CustomStringConvertible {
             return "-/+"
         }
     }
+}
+
+enum MathFunctionsEnum: String {
+    case add = "+"
+    case subtract = "-"
+    case divide = "/"
+    case multiply = "*"
+    case none = ""
 }
