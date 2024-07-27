@@ -43,6 +43,6 @@ enum MathFunctionsEnum: String {
     case add = "+"
     case subtract = "-"
     case divide = "/"
-    case multiply = "*"
+    case multiply = "x"
     case none = ""
 }

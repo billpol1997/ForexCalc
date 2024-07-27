@@ -12,7 +12,7 @@ final class MainViewModel: ObservableObject {
     @Published var buttons: [[ButtonsEnum]] = []
     @Published var result: String = "0"
     @Published var toggledFunction: (type: MathFunctionsEnum, isOn: Bool) = (.none, false)
-    private var storedNumber: Int = 0
+    private var storedNumber: Double = 0
     
     init() {
         self.buttons = self.initializeButtons()
@@ -77,43 +77,50 @@ final class MainViewModel: ObservableObject {
     }
     
     private func percentage() {
-        let newRes = (Int(self.result) ?? 0) / 100
+        let newRes = (Double(self.result) ?? 0) / 100
         self.result = String(newRes)
     }
     
     private func reset() {
         self.result = "0"
         self.storedNumber = 0
+        self.toggledFunction = (.none, false)
     }
     
     private func toggleFunction(type: MathFunctionsEnum) {
         self.toggledFunction = (type, true)
-        self.storedNumber = Int(self.result) ?? 0
+        self.storedNumber = Double(self.result) ?? 0
     }
     
     private func getResult() {
         if self.toggledFunction.isOn && self.storedNumber != 0 {
             switch self.toggledFunction.type {
             case .add:
-                let nerRes = (Int(self.result) ?? 0) + self.storedNumber
+                let nerRes = self.storedNumber + (Double(self.result) ?? 0)
                 self.result = String(nerRes)
             case .subtract:
-                let nerRes = (Int(self.result) ?? 0) - self.storedNumber
+                let nerRes = self.storedNumber - (Double(self.result) ?? 0)
                 self.result = String(nerRes)
             case .divide:
-                let nerRes = (Int(self.result) ?? 0) / self.storedNumber
+                let nerRes =  self.storedNumber / (Double(self.result) ?? 0)
                 self.result = String(nerRes)
             case .multiply:
-                let nerRes = (Int(self.result) ?? 0) * self.storedNumber
+                let nerRes = self.storedNumber * (Double(self.result) ?? 0)
                 self.result = String(nerRes)
             case .none:
                 break
             }
             self.toggledFunction = (.none, false)
+            self.removeDecimal()
         }
     }
     
-    
+    private func removeDecimal() {
+        let value = Double(self.result) ?? 0.0
+        if value.truncatingRemainder(dividingBy: 1) == 0 {
+            self.result = String(Int(value))
+        }
+    }
     
     //MARK: UI logic
     
