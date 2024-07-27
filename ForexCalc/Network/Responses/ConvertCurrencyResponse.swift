@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct ConvertCurrencyResponse: Decodable {
+    let data: [String : Double]?
+}

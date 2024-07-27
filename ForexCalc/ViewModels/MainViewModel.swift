@@ -12,12 +12,50 @@ final class MainViewModel: ObservableObject {
     @Published var buttons: [[ButtonsEnum]] = []
     @Published var result: String = "0"
     @Published var toggledFunction: (type: MathFunctionsEnum, isOn: Bool) = (.none, false)
+    @Published var baseCurrency: CurrencyEnum = .euro
+    @Published var currencyList: [CurrencyEnum] = [.usd, .yen, .pounds]
     private var storedNumber: Double = 0
+    private var manager = NetworkManager.shared
+    private var response: ConvertCurrencyResponse?
     
     init() {
         self.buttons = self.initializeButtons()
+        self.fetchCurrencies()
+    }
+    //MARK: Network fetching
+    
+    func fetchRates() async {
+        do {
+            self.response = try await manager.getConvertionRates(from: baseCurrency.rawValue, to: self.assignList())
+        } catch {
+            print("EEEEERRRRROOOORO")
+        }
     }
     
+    private func fetchCurrencies() {
+        Task { [weak self] in
+            guard let self else { return }
+            await self.fetchRates()
+        }
+    }
+    
+    private func assignList() -> [String] {
+        let list = currencyList.map { currency in
+            currency.rawValue
+        }
+        return list
+    }
+    
+    private func changeBase(with currency: CurrencyEnum) {
+        if currency != self.baseCurrency {
+            currencyList.removeAll { item in
+                item == currency
+            }
+            currencyList.append(self.baseCurrency)
+            self.baseCurrency = currency
+            self.fetchCurrencies()
+        }
+    }
     
     //MARK: math calculation logic
     
@@ -48,11 +86,19 @@ final class MainViewModel: ObservableObject {
         }
     }
     
+    func convertCurrency(to currency: CurrencyEnum) {
+        let rate = response?.data?[currency.rawValue] ?? 0.0
+        let newRes = (Double(self.result) ?? 0.0) * rate
+        self.result = newRes != 0 ? String(format: "%.3f", newRes) : "Error"
+        self.changeBase(with: currency)
+        
+    }
+    
     private func updateResult(with number: String) {
         if self.result == "0" && number != "0" {
             self.result = number
         } else {
-            if self.toggledFunction.isOn {
+            if self.toggledFunction.isOn && Double(self.result) == self.storedNumber {
                 self.result = number
             } else {
                 let newRes = self.result + number
@@ -143,7 +189,7 @@ final class MainViewModel: ObservableObject {
             return Color.white
         }
     }
-
+    
     func getButtonWidth(button: ButtonsEnum) -> CGFloat {
         switch button {
         case .zero:
@@ -165,4 +211,16 @@ final class MainViewModel: ObservableObject {
         return buttons
     }
     
+}
+
+extension String {
+    func toFormattedNumberToString(_ numberFormatter: NumberFormatter? = nil) -> String? {
+        let formatter = (numberFormatter != nil) ? numberFormatter : NumberFormatter()
+        formatter?.numberStyle = .decimal
+        formatter?.maximumFractionDigits = 3
+        formatter?.minimumFractionDigits = 0
+        formatter?.groupingSeparator = ","
+        formatter?.locale = Locale(identifier: "en_US")
+        return formatter?.string(from: NSNumber(value: Double(self) ?? 0.0))
+    }
 }

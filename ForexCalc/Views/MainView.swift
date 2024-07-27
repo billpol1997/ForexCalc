@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject var viewModel: MainViewModel
+    @State var toggleDropDown: Bool = false
     
     
     init(viewModel: MainViewModel) {
@@ -25,6 +26,15 @@ struct MainView: View {
             
             VStack(spacing: 8) {
                 Spacer()
+                HStack {
+                    currency
+                        .padding(.leading, 8)
+                        .padding(.bottom, 12)
+                    dropDown
+                        .padding(.leading, 12)
+                        .padding(.bottom, 12)
+                    Spacer()
+                }
                 calculationView
                 buttons
                     .padding(.bottom, 8)
@@ -35,11 +45,12 @@ struct MainView: View {
     var calculationView: some View {
         HStack {
             Spacer()
-            Text(self.viewModel.result)
+            Text(self.viewModel.result.toFormattedNumberToString() ?? "no")
                 .foregroundColor(.white)
                 .font(.system(size: 70))
                 .fontWeight(.semibold)
                 .padding(.horizontal,12)
+                .lineLimit(2)
         }
     }
     
@@ -62,6 +73,51 @@ struct MainView: View {
                 }
                 
             }
+        }
+    }
+    
+    var currency: some View {
+        HStack {
+            Button {
+                withAnimation {
+                    self.toggleDropDown.toggle()
+                }
+            } label: {
+                Text(self.viewModel.baseCurrency.rawValue)
+                    .foregroundColor(.white)
+                    .font(.system(size: 13))
+                    .fontWeight(.semibold)
+                    .padding(16)
+                    
+            }
+            .background(.orange)
+        }
+        .cornerRadius(12)
+    }
+    
+    @ViewBuilder
+    var dropDown: some View {
+        if self.toggleDropDown {
+            HStack(spacing: 8) {
+                ForEach(self.viewModel.currencyList, id: \.self) { item in
+                    Button {
+                        withAnimation {
+                            self.toggleDropDown = false
+                            self.viewModel.convertCurrency(to: item)
+                        }
+                    } label: {
+                        HStack {
+                            Text(item.rawValue)
+                                .foregroundColor(.orange)
+                                .font(.system(size: 13))
+                                .fontWeight(.semibold)
+                                .padding(16)
+                        }
+                    }
+                }
+            }
+            .background(.white)
+            .cornerRadius(12)
         }
     }
 }

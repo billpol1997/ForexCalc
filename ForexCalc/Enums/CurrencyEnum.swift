@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+enum CurrencyEnum: String {
+    case euro = "EUR"
+    case usd = "USD"
+    case yen = "JPY"
+    case pounds = "GBP"
+}
