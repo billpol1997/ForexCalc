@@ -14,6 +14,7 @@ final class MainViewModel: ObservableObject {
     @Published var toggledFunction: (type: MathFunctionsEnum, isOn: Bool) = (.none, false)
     @Published var baseCurrency: CurrencyEnum = .euro
     @Published var currencyList: [CurrencyEnum] = [.usd, .yen, .pounds]
+    @Published var showConvertionError: Bool = false
     private var storedNumber: Double = 0
     private var manager = NetworkManager.shared
     private var response: ConvertCurrencyResponse?
@@ -28,7 +29,7 @@ final class MainViewModel: ObservableObject {
         do {
             self.response = try await manager.getConvertionRates(from: baseCurrency.rawValue, to: self.assignList())
         } catch {
-            print("EEEEERRRRROOOORO")
+            self.showConvertionError = true
         }
     }
     

@@ -18,6 +18,11 @@ struct MainView: View {
     
     var body: some View {
         content
+            .alert("Error 404, convertion rates failed to load", isPresented: self.$viewModel.showConvertionError) {
+                Button("Ok", role: .cancel) {
+                    self.viewModel.showConvertionError = false
+                }
+            }
     }
     
     var content: some View {
