@@ -9,22 +9,27 @@ import Foundation
 import SwiftUI
 
 final class MainViewModel: ObservableObject {
-    @Published var buttons: [[ButtonsEnum]] = []
+    
+    //MARK: Vars
+    @Published var buttons: [[ButtonsEnum]]
     @Published var result: String = "0"
     @Published var toggledFunction: (type: MathFunctionsEnum, isOn: Bool) = (.none, false)
     @Published var baseCurrency: CurrencyEnum = .euro
     @Published var currencyList: [CurrencyEnum] = [.usd, .yen, .pounds]
     @Published var showConvertionError: Bool = false
+    var dataFactory: MainDataFactory
     private var storedNumber: Double = 0
     private var manager = NetworkManager.shared
     private var response: ConvertCurrencyResponse?
     
-    init() {
-        self.buttons = self.initializeButtons()
+    //MARK: Init
+    init(dataFactory: MainDataFactory) {
+        self.dataFactory = DIContainer.shared.getContainerSwinject().resolve(MainDataFactory.self)!
+        self.buttons = self.dataFactory.initializeButtons()
         self.fetchCurrencies()
     }
-    //MARK: Network fetching
     
+    //MARK: Network fetching
     func fetchRates() async {
         do {
             self.response = try await manager.getConvertionRates(from: baseCurrency.rawValue, to: self.assignList())
@@ -40,11 +45,9 @@ final class MainViewModel: ObservableObject {
         }
     }
     
+    //MARK: Handle currency list
     private func assignList() -> [String] {
-        let list = currencyList.map { currency in
-            currency.rawValue
-        }
-        return list
+        return dataFactory.assignList(currencyList: self.currencyList)
     }
     
     private func changeBase(with currency: CurrencyEnum) {
@@ -59,7 +62,6 @@ final class MainViewModel: ObservableObject {
     }
     
     //MARK: math calculation logic
-    
     func getButtonData(button: ButtonsEnum) {
         switch button {
         case .number(let number):
@@ -92,7 +94,6 @@ final class MainViewModel: ObservableObject {
         let newRes = (Double(self.result) ?? 0.0) * rate
         self.result = newRes != 0 ? String(format: "%.3f", newRes) : "Error"
         self.changeBase(with: currency)
-        
     }
     
     private func updateResult(with number: String) {
@@ -168,52 +169,9 @@ final class MainViewModel: ObservableObject {
             self.result = String(Int(value))
         }
     }
-    
-    //MARK: UI logic
-    
-    func getButtonBGColor(button: ButtonsEnum) -> Color {
-        switch button {
-        case .number, .decimal, .zero:
-            return Color.white.opacity(0.3)
-        case .clear, .negative, .percent:
-            return Color.white.opacity(0.8)
-        default:
-            return Color.orange
-        }
-    }
-    
-    func getButtonTextColor(button: ButtonsEnum) -> Color {
-        switch button {
-        case .clear, .negative, .percent:
-            return Color.black
-        default:
-            return Color.white
-        }
-    }
-    
-    func getButtonWidth(button: ButtonsEnum) -> CGFloat {
-        switch button {
-        case .zero:
-            return ((UIScreen.main.bounds.width - (4 * 12)) / 4 ) * 2
-        default:
-            return (UIScreen.main.bounds.width - (5 * 12)) / 4
-        }
-    }
-    
-    private func initializeButtons() -> [[ButtonsEnum]] {
-        let buttons = [
-            [ ButtonsEnum.clear, ButtonsEnum.negative, ButtonsEnum.percent, ButtonsEnum.divide ],
-            [ ButtonsEnum.number("1"),  ButtonsEnum.number("2"),  ButtonsEnum.number("3"), ButtonsEnum.multiply ],
-            [ ButtonsEnum.number("4"),  ButtonsEnum.number("5"),  ButtonsEnum.number("6"), ButtonsEnum.subtract ],
-            [  ButtonsEnum.number("7"),  ButtonsEnum.number("8"),  ButtonsEnum.number("9"), ButtonsEnum.add],
-            [ ButtonsEnum.zero, ButtonsEnum.decimal, ButtonsEnum.equal]
-        ]
-        
-        return buttons
-    }
-    
 }
 
+//MARK: Extension
 extension String {
     func toFormattedNumberToString(_ numberFormatter: NumberFormatter? = nil) -> String? {
         let formatter = (numberFormatter != nil) ? numberFormatter : NumberFormatter()

@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    //MARK: Vars
     @ObservedObject var viewModel: MainViewModel
     @State var toggleDropDown: Bool = false
     
-    
+    //MARK: Init
     init(viewModel: MainViewModel) {
         self.viewModel = DIContainer.shared.getContainerSwinject().resolve(MainViewModel.self)!
     }
     
+    //MARK: Body
     var body: some View {
         content
             .alert("Error 404, convertion rates failed to load", isPresented: self.$viewModel.showConvertionError) {
@@ -25,6 +28,7 @@ struct MainView: View {
             }
     }
     
+    //MARK: Calculator
     var content: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
@@ -47,6 +51,7 @@ struct MainView: View {
         }
     }
     
+    //MARK: Sub views
     var calculationView: some View {
         HStack {
             Spacer()
@@ -68,10 +73,10 @@ struct MainView: View {
                             self.viewModel.getButtonData(button: item)
                         } label: {
                             Text(item.description)
-                                .frame(width: self.viewModel.getButtonWidth(button: item), height: (UIScreen.main.bounds.width - (5 * 12)) / 4)
+                                .frame(width: self.viewModel.dataFactory.getButtonWidth(button: item), height: (UIScreen.main.bounds.width - (5 * 12)) / 4)
                                 .font(.system(size: 32))
-                                .foregroundColor(self.viewModel.toggledFunction.isOn && item.description == self.viewModel.toggledFunction.type.rawValue ? .orange : self.viewModel.getButtonTextColor(button: item))
-                                .background(self.viewModel.toggledFunction.isOn && item.description == self.viewModel.toggledFunction.type.rawValue ? .white : self.viewModel.getButtonBGColor(button: item))
+                                .foregroundColor(self.viewModel.toggledFunction.isOn && item.description == self.viewModel.toggledFunction.type.rawValue ? .orange : self.viewModel.dataFactory.getButtonTextColor(button: item))
+                                .background(self.viewModel.toggledFunction.isOn && item.description == self.viewModel.toggledFunction.type.rawValue ? .white : self.viewModel.dataFactory.getButtonBGColor(button: item))
                                 .cornerRadius((UIScreen.main.bounds.width - (5 * 12)) / 4)
                         }
                     }

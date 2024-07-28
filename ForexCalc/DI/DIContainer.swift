@@ -22,8 +22,12 @@ final class DIContainer: SwinjectInterface {
             MainView(viewModel: r.resolve(MainViewModel.self)!)
         }
         
+        container.register(MainDataFactory.self) { r in
+            MainDataFactory()
+        }
+        
         container.register(MainViewModel.self) { r in
-            MainViewModel()
+            MainViewModel(dataFactory: r.resolve(MainDataFactory.self)!)
         }
         
         return container
