@@ -10,7 +10,16 @@ import SwiftUI
 
 final class MainDataFactory {
     
-    //MARK: Handle currency list
+    //MARK: Handle currency
+    func initCurrencyList() -> [CurrencyEnum] {
+        let list: [CurrencyEnum] = [.usd, .yen, .pounds]
+        return list
+    }
+    
+    func initBaseCurrency() -> CurrencyEnum {
+        return .euro
+    }
+    
     func assignList(currencyList: [CurrencyEnum]) -> [String] {
         let list = currencyList.map { currency in
             currency.rawValue

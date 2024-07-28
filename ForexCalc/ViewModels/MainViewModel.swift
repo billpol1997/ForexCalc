@@ -14,8 +14,8 @@ final class MainViewModel: ObservableObject {
     @Published var buttons: [[ButtonsEnum]]
     @Published var result: String = "0"
     @Published var toggledFunction: (type: MathFunctionsEnum, isOn: Bool) = (.none, false)
-    @Published var baseCurrency: CurrencyEnum = .euro
-    @Published var currencyList: [CurrencyEnum] = [.usd, .yen, .pounds]
+    @Published var baseCurrency: CurrencyEnum
+    @Published var currencyList: [CurrencyEnum]
     @Published var showConvertionError: Bool = false
     var dataFactory: MainDataFactory
     private var storedNumber: Double = 0
@@ -26,6 +26,8 @@ final class MainViewModel: ObservableObject {
     init(dataFactory: MainDataFactory) {
         self.dataFactory = DIContainer.shared.getContainerSwinject().resolve(MainDataFactory.self)!
         self.buttons = self.dataFactory.initializeButtons()
+        self.baseCurrency = self.dataFactory.initBaseCurrency()
+        self.currencyList = self.dataFactory.initCurrencyList()
         self.fetchCurrencies()
     }
     
