@@ -10,11 +10,10 @@ import Alamofire
 
 final class NetworkManager {
     let service = NetworkService()
-    
     static let shared = NetworkManager()
     
     let headers: HTTPHeaders = [
-        "apikey" : "fca_live_sD4znNSsuVkasDYB3jIbD8Nho87PmvH4jUDfU5uG"
+        "apikey" : Constants.shared.getKey()
     ]
     
     func getConvertionRates(from base: String, to currencies: [String]) async throws -> ConvertCurrencyResponse {

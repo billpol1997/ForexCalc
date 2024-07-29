@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A945D2312C569FDB00B7CA0E /* MainDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A945D2302C569FDB00B7CA0E /* MainDataFactory.swift */; };
+		A96911032C580D56002D7ED0 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = A96911022C580D56002D7ED0 /* Keys.plist */; };
+		A96911062C580DB5002D7ED0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96911052C580DB5002D7ED0 /* Constants.swift */; };
 		A969C70F2C53FC63007A3FD7 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = A969C70E2C53FC63007A3FD7 /* Swinject */; };
 		A9BD173B2C54F44B00229D43 /* ConvertCurrencyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD173A2C54F44B00229D43 /* ConvertCurrencyResponse.swift */; };
 		A9BD17402C54F52200229D43 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A9BD173F2C54F52200229D43 /* Alamofire */; };
@@ -47,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		A945D2302C569FDB00B7CA0E /* MainDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataFactory.swift; sourceTree = "<group>"; };
+		A96911022C580D56002D7ED0 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		A96911052C580DB5002D7ED0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A9BD173A2C54F44B00229D43 /* ConvertCurrencyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertCurrencyResponse.swift; sourceTree = "<group>"; };
 		A9BD17412C54F54700229D43 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A9BD17432C54F59500229D43 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -95,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A96911042C580D97002D7ED0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A96911052C580DB5002D7ED0 /* Constants.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A9BD17392C54F43000229D43 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +149,7 @@
 		A9CA923F2C53EDC80023F305 /* ForexCalc */ = {
 			isa = PBXGroup;
 			children = (
+				A96911042C580D97002D7ED0 /* Resources */,
 				A9BD17492C54FEC500229D43 /* Enums */,
 				A9CA92782C53FAC80023F305 /* DI */,
 				A9CA926E2C53EF520023F305 /* Network */,
@@ -145,6 +158,7 @@
 				A9CA92402C53EDC80023F305 /* ForexCalcApp.swift */,
 				A9CA92442C53EDC90023F305 /* Assets.xcassets */,
 				A9CA92462C53EDC90023F305 /* Preview Content */,
+				A96911022C580D56002D7ED0 /* Keys.plist */,
 			);
 			path = ForexCalc;
 			sourceTree = "<group>";
@@ -321,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A96911032C580D56002D7ED0 /* Keys.plist in Resources */,
 				A9CA92482C53EDC90023F305 /* Preview Assets.xcassets in Resources */,
 				A9CA92452C53EDC90023F305 /* Assets.xcassets in Resources */,
 			);
@@ -354,6 +369,7 @@
 				A9CA92702C53EF800023F305 /* ButtonsEnum.swift in Sources */,
 				A9BD17422C54F54700229D43 /* NetworkManager.swift in Sources */,
 				A9CA926B2C53EF0D0023F305 /* MainView.swift in Sources */,
+				A96911062C580DB5002D7ED0 /* Constants.swift in Sources */,
 				A9CA927A2C53FADB0023F305 /* DIContainer.swift in Sources */,
 				A9CA92412C53EDC80023F305 /* ForexCalcApp.swift in Sources */,
 				A9BD17482C54FA3100229D43 /* StatusResponse.swift in Sources */,
