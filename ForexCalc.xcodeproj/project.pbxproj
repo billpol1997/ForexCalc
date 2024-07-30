@@ -11,6 +11,7 @@
 		A96911032C580D56002D7ED0 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = A96911022C580D56002D7ED0 /* Keys.plist */; };
 		A96911062C580DB5002D7ED0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96911052C580DB5002D7ED0 /* Constants.swift */; };
 		A969C70F2C53FC63007A3FD7 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = A969C70E2C53FC63007A3FD7 /* Swinject */; };
+		A9A263B42C595B68009569C2 /* CalcTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A263B32C595B68009569C2 /* CalcTest.swift */; };
 		A9BD173B2C54F44B00229D43 /* ConvertCurrencyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD173A2C54F44B00229D43 /* ConvertCurrencyResponse.swift */; };
 		A9BD17402C54F52200229D43 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A9BD173F2C54F52200229D43 /* Alamofire */; };
 		A9BD17422C54F54700229D43 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD17412C54F54700229D43 /* NetworkManager.swift */; };
@@ -51,6 +52,7 @@
 		A945D2302C569FDB00B7CA0E /* MainDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataFactory.swift; sourceTree = "<group>"; };
 		A96911022C580D56002D7ED0 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		A96911052C580DB5002D7ED0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A9A263B32C595B68009569C2 /* CalcTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcTest.swift; sourceTree = "<group>"; };
 		A9BD173A2C54F44B00229D43 /* ConvertCurrencyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertCurrencyResponse.swift; sourceTree = "<group>"; };
 		A9BD17412C54F54700229D43 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A9BD17432C54F59500229D43 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				A9CA92512C53EDCA0023F305 /* ForexCalcTests.swift */,
+				A9A263B32C595B68009569C2 /* CalcTest.swift */,
 			);
 			path = ForexCalcTests;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9A263B42C595B68009569C2 /* CalcTest.swift in Sources */,
 				A9CA92522C53EDCA0023F305 /* ForexCalcTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
